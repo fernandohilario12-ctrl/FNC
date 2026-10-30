@@ -283,8 +283,14 @@ textarea { min-height: 92px; resize: vertical; line-height: 1.45 }
   atualizaModo();
   if (emMolde) {
     var av = el('div', 'card');
-    av.appendChild(el('strong', null, 'Como usar aqui no Claude'));
-    av.appendChild(el('p', 'note', 'Abra o print na Fotos, toque e segure sobre o texto, toque em Copiar e cole no passo 3. Depois toque em Verificar.'));
+    av.appendChild(el('strong', null, 'Use o FNC completo no Safari'));
+    av.appendChild(el('p', 'note', 'Aqui no Claude, copie o texto do print (toque e segure → Copiar) e cole no passo 3.'));
+    var bt = el('a', 'btn primary', 'Abrir no Safari');
+    bt.href = 'https://raw.githack.com/fernandohilario12-ctrl/FNC/main/index.html';
+    bt.target = '_blank'; bt.rel = 'noopener';
+    bt.style.cssText = 'display:flex;align-items:center;justify-content:center;text-decoration:none;height:52px';
+    av.appendChild(bt);
+    av.appendChild(el('p', 'note', 'No Safari, o FNC lê o print sozinho. Toque em Compartilhar → Adicionar à Tela de Início para virar app.'));
     document.querySelector('.wrap').insertBefore(av, document.querySelector('.wrap').children[1]);
   }
 
